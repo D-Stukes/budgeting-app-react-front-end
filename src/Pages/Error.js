@@ -3,9 +3,9 @@ import ErrorPage from '../Components/ErrorPage';
 
 const Error = () => {
     return (
-        <div>
+        <>
             <ErrorPage />
-        </div>
+        </>
     );
 };
 

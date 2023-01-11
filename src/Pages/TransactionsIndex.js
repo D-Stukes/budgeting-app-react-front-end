@@ -3,9 +3,9 @@ import Transactions from '../Components/Transactions';
 
 const TransactionsIndex = () => {
     return (
-        <div>
+        <>
             <Transactions />
-        </div>
+        </>
     );
 };
 

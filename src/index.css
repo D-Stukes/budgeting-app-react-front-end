@@ -16,3 +16,19 @@ code {
   display: grid;     grid-template-columns: .1fr .75fr 1fr 1fr .5fr .5fr;
   width: 100vw;      height: 10vh; background-color: rgb(5, 37, 155);
 } */
+
+/* li{
+  display:inline-block;
+  margin-left: 10vw; 
+  align-items: center;
+} */
+
+
+th{
+  margin-right: 7em;
+  /* margin-left: 10em */
+}
+td, a{
+  margin-right: 10em;
+  /* margin-left: 10em */
+}

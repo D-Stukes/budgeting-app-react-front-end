@@ -19,19 +19,35 @@ function App() {
     <div className="App">
        <Router>
         <Navbar/>
-        <main>
-          <Routes>
+        <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/transactions" element={<Transactions />} />
             <Route path="/transactions/new" element={<New />} />
             <Route path="/transactions/:index" element={<Show />} />
             <Route path="/transactions/:index/edit" element={<Edit />} />
             <Route path="/error" element={<Error />} />
-          </Routes>
-        </main>
+        </Routes>
       </Router>
     </div>
   );
 }
 
 export default App;
+
+{/* <Routes>
+<Route path="/" element={<Home />} />
+<Route path="/courses" element={<Courses />}>
+  <Route path="search" element={<Search />} />
+  <Route path="list" element={<List/>}/>
+</Route>
+</Routes> */}
+
+{/* <Routes>
+<Route path="/" element={<Home />} />
+    <Route path="/transactions" element={<Transactions />} >
+    <Route path="new" element={<New />} />
+    <Route path="index" element={<Show />} />
+    <Route path="index/edit" element={<Edit />} />
+</Route>
+<Route path="/error" element={<Error />} />
+</Routes> */}

@@ -3,9 +3,9 @@ import ShowOneTransaction from '../Components/ShowOneTransaction';
 
 const Show = () => {
     return (
-        <div>
+        <>
            <ShowOneTransaction /> 
-        </div>
+        </>
     );
 };
 

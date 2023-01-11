@@ -1,10 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
 
-const ShowOneTransaction = ({transaction, index}) => {
+const ShowOneTransaction = ({transaction, index, transactionId}) => {
 
     return (
-        <>
+     
             <tr className='transactionList'>
                 <td className='transaction_ItemName'><Link to={`/transactions/${index}`}>{transaction.item_name}</Link> </td>
 
@@ -17,7 +17,7 @@ const ShowOneTransaction = ({transaction, index}) => {
                 <td className='transactionDate'><Link to={`/transactions/${index}`}> {transaction.date} </Link></td>
 
             </tr>    
-        </>
+        
     );
 };
 

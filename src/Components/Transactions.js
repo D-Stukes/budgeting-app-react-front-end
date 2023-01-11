@@ -12,20 +12,21 @@ const Transactions = () => {
     useEffect(() => {
         axios.get(`${API}/transactions`)
         .then((res) => setTransactions(res.data))
-        console.log(transactions, "transactions after useEffect")
         }, [])
 
     return (
              <>
+             {console.log(transactions, "transactions after useEffect")}
                 <tr className='transactionListHdg'>
-                    <td>Item Name</td>
-                    <td>Amount</td>
-                    <td>From</td>
-                    <td>Category</td> 
-                    <td>Date</td>
+                    <th className='item-name'>Item Name</th>
+                    <th className='amount'>Amount</th>
+                    <th className='from'>From</th>
+                    <th className='category'>Category</th> 
+                    <th className='date'>Date</th>
                 </tr> 
           {transactions.map((transaction, index) => {
-              return <ShowOneTransaction key={index} transaction={transaction}  />;
+            {console.log(transaction, index, "this is transaction and index in the map statement")}
+              return <ShowOneTransaction key={index} transaction={transaction}   />;
             })}
             </>       
     );

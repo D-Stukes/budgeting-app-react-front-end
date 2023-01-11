@@ -3,9 +3,9 @@ import EditTransactionForm from '../Components/EditTransactionForm';
 
 const Edit = () => {
     return (
-        <div>
+        <>
            <EditTransactionForm /> 
-        </div>
+        </>
     );
 };
 

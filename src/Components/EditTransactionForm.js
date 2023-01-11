@@ -8,7 +8,6 @@ const EditTransactionForm = () => {
     let { index } = useParams();
     const navigate = useNavigate()
     const [transaction, setTransaction] = useState({
-        transactionId: "",
         item_name: "",
         amount: "",
         date: "",
@@ -42,16 +41,6 @@ const EditTransactionForm = () => {
     return (
         <>
             <form onSubmit={handleSubmit}>
-                <label htmlFor="transactionId">Transaction ID:</label>
-                <input
-                id="transactionId"
-                value={transaction.transactionId}
-                type="text"
-                onChange={handleTextChange}
-                placeholder="Transaction Id (auto-generated)"
-
-                />
-                <br/>
 
                 <label htmlFor="item_name">Item Name:</label>
                 <input
@@ -78,50 +67,48 @@ const EditTransactionForm = () => {
                 <label htmlFor="date">Date:</label>
                 <input
                 id="date"
+                name="date"
                 value={transaction.date}
                 type="date"
-                onChange={handleTextChange}
+                
                 placeholder="Please select a date"
+                onChange={handleTextChange}
                 required
                 />
-                <br/><br/>
-                <input type="submit" value="  Save"/>
                 <br/><br/>
 
                 <label htmlFor="from">From:</label>
                 <input
                 id='from'
                 value={transaction.from}
+                name="from"
                 type="text"
                 onChange={handleTextChange}
                 placeholder="Enter the source business or company. (e.g. bank, supermarket"
                 required
                 />
-                <br/>
+                <br/><br/>
                 <label htmlFor="category">Category:</label>
                 <input
                 id='category'
+                name="category"
                 value={transaction.category}
                 type="text"
                 onChange={handleTextChange}
                 placeholder="Enter a category"
                 required
                 />
-                <br/>
                 <br/> <br/>
                 <label htmlFor="description">Description:</label>
                 <input
                 id='description'
+                name="description"
                 value={transaction.description}
                 type="text"
                 onChange={handleTextChange}
                 placeholder="Enter a description/note"
-               
                 />
-                <br/>
                 <br/> <br/>
-
-
                 <input type="submit" value="Save"/>
                 <Link to={`/transactions`} className='cancelLink'><button className='cancelEditButton'>Cancel</button>
                 </Link>
