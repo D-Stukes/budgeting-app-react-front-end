@@ -78,8 +78,6 @@ const NewTransactionForm = () => {
                 required
                 />
                 <br/><br/>
-                <input type="submit" value="  Save"/>
-                <br/><br/>
 
                 <label htmlFor="from">From:</label>
                 <input
@@ -100,6 +98,8 @@ const NewTransactionForm = () => {
                 placeholder="Enter a category"
                 required
                 />
+                <br/><br/>
+                <input type="submit" value="  Save"/>
                 <br/>
                 
             </form>
