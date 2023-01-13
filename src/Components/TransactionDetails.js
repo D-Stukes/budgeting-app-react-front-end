@@ -18,7 +18,7 @@ function TransactionDetails() {
     .get(`${API}/transactions/${index}`)
     .then(res => setTransaction(res.data))
     .catch(err => navigate('/error'))
-  }, [index, navigate]);
+  }, [index]);
 //   
   //delete selected transaction in response to delete button being clicked, then return to transaction list
   const handleDelete = () => {

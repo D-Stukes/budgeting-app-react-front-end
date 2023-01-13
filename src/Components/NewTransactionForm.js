@@ -22,11 +22,13 @@ const NewTransactionForm = () => {
 
     const handleSubmit = (event) => {
         event.preventDefault()
+        transaction.amount = Number(transaction.amount)
+        console.log(transaction, "transaction in handleSubmit on new form page")
 
     axios
         .post(`${API}/transactions`, transaction)
         .then(() => navigate('/transactions'))
-        .catch(err => console(err))
+        .catch(err => console.log(err))
     }
 
 
