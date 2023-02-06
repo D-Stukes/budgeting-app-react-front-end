@@ -1,10 +1,11 @@
 import React from 'react';
-import ErrorPage from '../Components/ErrorPage';
 
 const Error = () => {
     return (
         <>
-            <ErrorPage />
+        <div className='errorPage'>
+         404 Error - Sorry there was a problem. Please try again.   
+        </div>
         </>
     );
 };

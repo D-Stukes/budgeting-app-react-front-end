@@ -1,19 +1,24 @@
 import React from 'react';
-import { Link } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 
 const ShowOneTransaction = ({transaction, index}) => {
+    console.log("showOneTransaction index = ", index)
+    //removed index from props on line 4 after switching to using transactionId
 // console.log(index, "index on ShowOneTransaction page")
     return (
      <>
-       <Link to={`/transactions/${index}`}> <p>{transaction.item_name}</p></Link>
-        <p>{transaction.amount}</p>
-        {/* <p>{oneTransaction.category}</p> */}
-        <p>{transaction.date}</p>
-        {/* <p>{oneTransaction.from}</p> */}
+     <tr className='transactionRowItems'>
+       <td className='item1'><Link to={`/transactions/${index}`}> {transaction.item_name}</Link></td>
+       <td className='item2'><Link to={`/transactions/${index}`}> {transaction.amount}</Link></td>
+       <td className='item3'><Link to={`/transactions/${index}`}> {transaction.date}</Link></td>
+       <td className='item4'><Link to={`/transactions/${index}`}> {transaction.category}</Link></td>
+       <td className='item5'><Link to={`/transactions/${index}`}> {transaction.from}</Link></td>
+       <td className='item6'><Link to={`/transactions/${index}`}> {transaction.description}</Link></td>
+    </tr>
     </>
    
     );
-};
+}; 
 
 export default ShowOneTransaction;
 
@@ -39,3 +44,9 @@ export default ShowOneTransaction;
             //     <td className='transactionDate'><Link to={`/transactions/${index}`}> {transaction.date} </Link></td>
 
             // </tr> 
+            // <td className='item1'>{transaction.item_name}</td>
+            // <td className='item2'>{transaction.amount}</td>
+            // <td className='item3'>{transaction.date}</td>
+            // <td className='item4'>{transaction.category}</td>
+            // <td className='item5'>{transaction.from}</td>
+            // <td className='item6'>{transaction.description}</td>

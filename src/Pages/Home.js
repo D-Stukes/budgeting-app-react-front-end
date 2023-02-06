@@ -1,10 +1,11 @@
 import React from 'react';
-import HomePage from '../Components/HomePage';
 
 const Home = () => {
     return (
         <>
-            <HomePage />
+           <div className='homePage'>
+           <p className="welcomeMsg">Welcome To Star Budgeting System, where you can build and manaage a list of your financial transactions with ease!</p>
+            </div>
         </>
     );
 };

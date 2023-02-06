@@ -1,34 +1,284 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@500&family=Imperial+Script&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Meie+Script&display=swap');
+
+.app{
+  display: grid;
+  grid-template-rows: .5fr 4fr;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.navbar{
+  grid-row-start: 1;
+  grid-row-end: 2;
+  display: grid;
+  grid-template-columns: .25fr 1fr 1fr .25fr;
+  background-image: url("./Images/green-marblewithgold.png");
+  background-size: cover;
+  width: 100vw;
+  height: 135px;
+  border-bottom: .75em solid burlywood
+}
+.navBarHdg{
+  color: goldenrod;
+  font-family: 'Imperial Script', cursive;
+  text-align: center;
+  font-size: 4.5em;
+  margin-left: .5em;
+  grid-column-start: 2;
+  grid-column-end: 4;
+  text-decoration: none;
 }
 
-/* .navbar{
-  display: grid;     grid-template-columns: .1fr .75fr 1fr 1fr .5fr .5fr;
-  width: 100vw;      height: 10vh; background-color: rgb(5, 37, 155);
+.transactionsListButton{
+  background-color: goldenrod;
+  font-size: 1.5em ;
+  font-weight: bold;
+  margin-left: 0;
+  grid-column-start: 1;
+  grid-column-end: 2;
+  width: 7.5em;
+}
+
+.newTransactionButton{
+  background-color: goldenrod;
+  font-size: 1.5em ;
+  font-weight: bold;
+  margin-right: 0;
+  grid-column-start: 4;
+  grid-column-end: 5;
+  width: 9.5em;
+}
+
+.App{
+  display: grid;
+}
+
+.appDataArea{
+  display: grid;
+  grid-row: 2;
+  background-color: rgb(11, 72, 11);
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+
+.transactionsBox{
+  grid-row: 2;
+  display: grid;
+  background-image: url("./Images/mint-marble.png");
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: auto;
+  min-height: 5em;
+  min-width: 5em;
+  height: 90vh;
+  width: 100vw;
+  padding-left: 6em;
+}
+
+.transactionsBox{
+  grid-column-start: 2;
+  grid-column-end: 7;
+  background-image: url("./Images/cash1.png");
+  height: 20vh;
+  width: 72vw;
+  border: 7px solid green;
+  background-size: 50%;
+} 
+
+ .transactionsListHdg{
+
+  grid-column-start: 1;
+  grid-column-end: 7;
+  background-image: url("./Images/lightgreyTan-marble.png");
+  height: 5vh;
+  width: 50vw;
+}
+
+ /* .item-list {  */
+  /* grid-column-start:1;
+  grid-column-end: 2; */
+  /* font-weight: bold;
+  font-size: 1em;
+  text-align: center;
+  background-color: rgba(255, 234, 0, 0.4);
+} 
+
+.item-name {
+  grid-column-start:1;
+  grid-column-end: 2;
+  grid-row: 1;
+  font-weight: bold;
+  font-size: 1em;
+  text-align: center;
+  background-color: rgba(255, 234, 0, 0.4); *
+} 
+.amount {
+  grid-column-start:1;
+  grid-column-end: 2;
+  grid-row: 1;
+  font-weight: bold;
+  font-size: 1em;
+  text-align: center;
+   background-color: rgba(255, 234, 0, 0.4); *
+}
+.from {
+  grid-row: 1;
+  grid-column-start: 2;
+  grid-column-end: 3;
+  font-weight: bold;
+  font-size: 1em;
+  text-align: center;
+   background-color: rgba(255, 234, 0, 0.4); 
+}
+.category {
+  grid-row: 1;
+  grid-column-start:3;
+  grid-column-end: 4;
+  font-weight: bold;
+  font-size: 1em;
+  text-align: center;
+  /* background-color: rgba(255, 234, 0, 0.4); 
+}
+.date {
+  grid-row: 1;
+  grid-column-start:4;
+  grid-column-end: 5;
+  font-weight: bold;
+  font-size: 1em;
+  text-align: center;
+   background-color: rgba(255, 234, 0, 0.4); 
+}
+
+ .description {
+  grid-row: 1;
+  grid-column-start:5;
+  grid-column-end: 6;
+  font-weight: bold;
+  font-size: 1em;
+  text-align: center;
+  /* background-color: rgba(255, 234, 0, 0.4); */
+/* }  */
+.homePage{
+  height: 90vh;
+  width: 100vw;
+  background-image: url("./Images/mint-marble.png");
+  background-color: rgb(10, 49, 10)
+}
+
+.newPage, .editPage{
+  height: 90vh;
+  width: 100vw;
+  background-image: url("./Images/cashinbox.png");
+  background-color: rgb(10, 49, 10);
+  display:grid;
+  grid-template-columns: 1fr 2fr 1fr;
+}
+
+.newTransactionFormHdg{
+  font-size: 2.5em;
+  text-align: center;
+  font-weight: bolder;
+  font-family: 'Meie Script', cursive;
+  /* font-family: 'Barlow', sans-serif; */
+  /* font-family: 'Imperial Script', cursive; */
+  color: rgb(8, 45, 34);
+}
+
+.newTransactionFormBox, .editTransactionForm{
+  grid-column-start: 2;
+  grid-column-end: 3;
+  background-image: url("./Images/mint-marble.png");
+  font-weight: bold;
+}
+
+label {
+margin-left: 10em;
+padding-right: 2em;
+}
+input[type="text" i], input[type="number" i], input[type="date" i] {
+  width: 21.5em;
+}
+
+input#amount{
+  margin-left: 1.5em;
+}
+input#from{
+  margin-left: 2.8em;
+}
+input#date{
+  margin-left: 3.28em;
+}
+input#category{
+  margin-left: .9em;
+}
+input#description{
+  margin-left: -.39em;
+}
+
+input[type="submit" i]{
+  margin-left: 20.5em;
+  width: 11em;
+  font-weight: bold;
+}
+input[type="submit" i]:hover{
+  margin-left: 20.5em;
+  width: 11em;
+  background-color: rgb(8, 47, 7);
+  color:gold;
+}
+
+.errorPage {
+  height: 150vh;
+  width: 100vw;
+ background-color: rgb(240, 189, 147);
+}
+
+/* 
+table {
+  display: grid;
+  border-collapse: collapse;
+  min-width: 100%;
+  grid-template-columns: 
+    minmax(15vw, .7fr)
+    minmax(15vw, .7fr)
+    minmax(15vw, .7fr)
+    minmax(15vw, .7fr)
+    minmax(15vw, .7fr)
+    minmax(15vw, .7fr)
+    minmax(15vw, .7fr)
+    minmax(15vw, .7fr);
 } */
 
-/* li{
-  display:inline-block;
-  margin-left: 10vw; 
-  align-items: center;
+/* thead, tbody, tr {
+  display: contents;
 } */
 
+/* th,
+td {
+  padding: 2px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+} */
+/* 
+ th {
+  position: sticky;
+  top: 0; */
+  /* background: #6c7ae0; */
+  /* text-align: left;
+  font-weight: normal;
+  font-size: 1.1rem;
+  color: rgb(9, 0, 0); */
+/* }  */
 
-th{
-  margin-right: 7em;
-  /* margin-left: 10em */
-}
-td, a{
-  margin-right: 10em;
-  /* margin-left: 10em */
-}
+/* th:last-child {
+  border: 0;
+} */
+
+/* td {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  color: #271e08;
+} */
+
+/* tr:nth-child(even) td {
+  background: #f8f6ff;
+} */

@@ -1,0 +1,8 @@
+
+
+.navbar{
+  display: grid;     grid-template-columns: .1fr .75fr 1fr 1fr .5fr .5fr;
+  width: 100vw;      height: 10vh; background-color: rgb(5, 37, 155);
+  color: whitesmoke;
+}
+

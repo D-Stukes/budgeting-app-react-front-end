@@ -3,9 +3,11 @@ import NewTransactionForm from '../Components/NewTransactionForm';
 
 const New = () => {
     return (
-        <>
-          <NewTransactionForm />  
-        </>
+        <div className='newPage'>
+          <div className='newTransactionFormBox'>
+            <NewTransactionForm />  
+          </div>
+        </div>
     );
 };
 

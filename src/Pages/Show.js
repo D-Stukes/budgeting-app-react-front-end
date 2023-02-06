@@ -3,9 +3,9 @@ import TransactionDetails from '../Components/TransactionDetails';
 
 const Show = () => {
     return (
-        <>
+        <div className='showPage'>
            <TransactionDetails /> 
-        </>
+        </div>
     );
 };
 

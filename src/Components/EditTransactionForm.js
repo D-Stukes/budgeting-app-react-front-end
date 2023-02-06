@@ -1,6 +1,6 @@
 import React from 'react';
 import { useState, useEffect  } from 'react'
-import {  useParams, Link, useNavigate } from 'react-router-dom'
+import { useParams, Link, useNavigate } from 'react-router-dom'
 import axios from 'axios'
 const API = process.env.REACT_APP_API_URL
 
@@ -13,8 +13,8 @@ const EditTransactionForm = () => {
         date: "",
         from: "",
         category: "",
+        description:"",
     })
-
 
     const handleTextChange = (event) => {
         setTransaction({...transaction, [event.target.id]: event.target.value})
@@ -23,24 +23,31 @@ const EditTransactionForm = () => {
         axios
         .get(`${API}/transactions/${index}`)
         .then((res) => setTransaction(res.data))
-        .catch(err => console(err))
+        .catch(err => console.log(err))
       }, [index]);
 
       const handleSubmit = (event) => {
-        event.preventDefault()     
+        event.preventDefault() 
+        transaction.amount = Number(transaction.amount)   
         axios
         .put(`${API}/transactions/${index}`,transaction)
         .then((res) => {
             setTransaction(res.data)
             navigate(`/transactions/${index}`)
         })
-        .catch(err => console(err))
-        }
+        .catch(err => console.log(err))
+      }
 
+        // axios
+        // .put(`${API}/transactions/${id}`,transaction)
+        // .then(() => console.log(".then"))
+        // .catch(err => console.log(err))
+        // }
+        // navigate(`/transactions/${id}`)
 
     return (
         <>
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit} className = "editTransactionForm">
 
                 <label htmlFor="item_name">Item Name:</label>
                 <input
@@ -109,10 +116,12 @@ const EditTransactionForm = () => {
                 placeholder="Enter a description/note"
                 />
                 <br/> <br/>
-                <input type="submit" value="Save"/>
-                <Link to={`/transactions`} className='cancelLink'><button className='cancelEditButton'>Cancel</button>
+                <input type="submit" value=" Save"/>
+
+            
+            <Link to={`/transactions`} className='cancelLink'><button className='cancelEditButton'>Cancel</button>
                 </Link>
-            </form>
+        </form>
         </>
     ); 
 }

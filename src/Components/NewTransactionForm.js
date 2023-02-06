@@ -7,12 +7,12 @@ const API = process.env.REACT_APP_API_URL
 const NewTransactionForm = () => {
     const navigate = useNavigate()
     const [transaction, setTransaction] = useState({
-        transactionId: "",
         item_name: "",
         amount: "",
         date: "",
         from: "",
         category: "",
+        description: "",
     })
 
 
@@ -24,28 +24,19 @@ const NewTransactionForm = () => {
         event.preventDefault()
         transaction.amount = Number(transaction.amount)
         console.log(transaction, "transaction in handleSubmit on new form page")
-
-    axios
-        .post(`${API}/transactions`, transaction)
-        .then(() => navigate('/transactions'))
-        .catch(err => console.log(err))
+        axios
+            .post(`${API}/transactions`, transaction)
+            .then(() => navigate('/transactions'))
+            .catch(err => console.log(err))
     }
 
 
     return (
 <>
-            <form onSubmit={handleSubmit}>
-                <label htmlFor="transactionId">Transaction ID:</label>
-                <input
-                id="transactionId"
-                value={transaction.transactionId}
-                type="text"
-                onChange={handleTextChange}
-                placeholder="Transaction Id (auto-generated)"
-
-                />
-                <br/>
-
+            <h1 className="newTransactionFormHdg">Add a New Transaction</h1>
+            <form 
+               className='newTransactionForm1'
+                onSubmit={handleSubmit}>
                 <label htmlFor="item_name">Item Name:</label>
                 <input
                 id='item_name'
@@ -98,9 +89,31 @@ const NewTransactionForm = () => {
                 placeholder="Enter a category"
                 required
                 />
+
+                <br/><br/>
+                <label htmlFor="description">Description:</label>
+                <input
+                id='description'
+                value={transaction.description}
+                type="text"
+                onChange={handleTextChange}
+                placeholder="Enter a description"
+                required
+                />
+
                 <br/><br/>
                 <input type="submit" value="  Save"/>
                 <br/>
+                                {/* <label htmlFor="transactionId">Transaction ID:</label>
+                <input
+                id="transactionId"
+                value={transaction.transactionId}
+                type="text"
+                onChange={handleTextChange}
+                placeholder="Transaction Id (auto-generated)"
+                (removed because IDs are generated on the back end via UUID)
+
+                /> */}
                 
             </form>
         </>
