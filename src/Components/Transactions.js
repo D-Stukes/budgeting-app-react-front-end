@@ -1,8 +1,8 @@
 import React from 'react';
 import { useState, useEffect} from 'react';
-import ShowOneTransaction from "./ShowOneTransaction";
+import Transaction from "./Transaction";
 import axios from 'axios'
-import { Link } from "react-router-dom";
+//import { Link } from "react-router-dom";
 //import { v4 as uuid } from 'uuid';
 const API = process.env.REACT_APP_API_URL
 
@@ -17,51 +17,36 @@ const Transactions = () => {
         // let { index } = useParams();
         // let transaction = transactions.index
     return (
-        <>
-        <div className='transactionsBox'>
-                    {/* <p className='item-list'>Transactions List</p> */}
-                    {/* <th className='item-name'>Item Name</th>
-                    <th className='amount'>Amount</th>
-                    <th className='from'>From</th>
-                    <th className='category'>Category</th> 
-                    <th className='date'>Date</th> */}
-                    {/* <p className='description'>Description</p> */}
-
-          <table className='transactionsTable'>
-            <thead>
-                 <tr className='transactionsTableHdg'>
-                    <th className='item-name'>Item Name</th>
-                    <th className='amount'>Amount</th>
-                    <th className='from'>From</th>
-                    <th className='category'>Category</th> 
-                    <th className='date'>Date</th>
-                    <th className='description'>Description</th>
-                 </tr>
-            </thead>
-
-            <tbody className='transactionsTableBody'>
+      <div className='transactionsComponent'>
+         < >
+       
+        {/* <thead className='tableHdg'> */}
+            <th className='th1'>View this transaction</th>
+            <th className='th2'>Item Name</th>
+            <th className='th3'>Amount</th>
+            <th className='th4'>Date</th>
+            <th className='th5'>Category</th>
+            <th className='th6'>From</th>
+            <th className='th7'>Description</th>
+        {/* </thead> */}
+        
+        <table>
+             <tr>
              {
                 transactions.map((transaction, index ) =>{ 
-                    return <ShowOneTransaction key={index} transaction={transaction} index={index}/>
-            //   <tr className='transactionRowItems'>
-            //     {console.log(transaction[index])}
-            //     <td className='item1'>{transaction.item_name}</td>
-            //     <td className='item2'>{transaction.amount}</td>
-            //     <td className='item3'>{transaction.date}</td>
-            //     <td className='item4'>{transaction.category}</td>
-            //     <td className='item5'>{transaction.from}</td>
-            //     <td className='item6'>{transaction.description}</td>
-            //   </tr>
-              })}
-            </tbody>
-          </table>
+                     return <Transaction key={index} transaction={transaction} index={index}/>
+                })}
+             </tr>
+              </table>
 
-        </div>
         </>
+        </div>
     );
 };
 
 export default Transactions;
+
+////<ShowOneTransaction key={index} transaction={transaction} index={index}/>
 
 // {transactions.map((transaction, transactionId, index) => {
 //     return <ShowOneTransaction key={transactionId} transaction={transaction} index={index}

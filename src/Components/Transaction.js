@@ -1,48 +1,55 @@
 import React from 'react';
-import { useState, useEffect } from 'react';
-import ShowOneTransaction from "./ShowOneTransaction";
-import axios from 'axios'
-//import { v4 as uuid } from 'uuid';
-const API = process.env.REACT_APP_API_URL
+import { Link, useParams } from 'react-router-dom'
 
-
-const Transactions = () => {
-
-    const [transactions, setTransactions] = useState([]) 
-    useEffect(() => {
-        axios.get(`${API}/transactions`)
-        .then((res) => setTransactions(res.data))
-        }, [])
+const Transaction = ({transaction, index}) => {
+    console.log("showOneTransaction index = ", index)
 
     return (
-        <>
-        <div className='transactionsBox'>
-                    {/* <p className='item-list'>Transactions List</p> */}
-                    <li className='item-name'>Item Name</li>
-                    <li className='amount'>Amount</li>
-                    <li className='from'>From</li>
-                    <li className='category'>Category</li> 
-                    <li className='date'>Date</li>
-                    {/* <p className='description'>Description</p> */}
+     <>
+     <br/>
+       {/* <tr className='transactionRowItems'> */}
+            <td className='viewItem'><Link to={`/transactions/${index}`}>View this entry</Link></td>
+            <td className='items item1'> {transaction.item_name}</td>
+            <td className='items item2'> {transaction.amount}</td>
+            <td className='items item3'> {transaction.date}</td>
+            <td className='items item4'> {transaction.category}</td>
+            <td className='items item5'> {transaction.from}</td>
+            <td className='items item6'> {transaction.description}</td>
+      {/* </tr> */}
       
-          {transactions.map((transaction,index) => {
-            // {console.log(transaction, index, "this is transaction and index in the map statement")}
-              return <ShowOneTransaction key={index} transaction={transaction} index={index} />;
-
-            {/* <ShowOneTransaction key={transaction.transactionId} transaction={transaction}  />; switched back to using index*/}
-
-            })} 
-        </div>
-        </>
+   
+    </>
+   
     );
-};
+}; 
 
-export default Transactions;
+export default Transaction;
 
-// {transactions.map((transaction, transactionId, index) => {
-//     return <ShowOneTransaction key={transactionId} transaction={transaction} index={index}
-// {console.log(transactions, "transactions after useEffect")}
-//           {transactions.map((transaction, index) => {
-//             {console.log(transaction, index, "this is transaction and index in the map statement")}
-//               return <ShowOneTransaction key={index} transaction={transaction}   />;
-//             })} 
+//replaced transactionId with index after excess elements were created in react browser
+
+
+// transactionId: {itemID},
+// item_name: "Con Edison",
+// amount: 150,
+// date: "01/2/2023",
+// from: "Utility Bill",
+// category: "Expenses",
+
+            // <tr className='transactionList'>
+            //     <td className='transaction_ItemName'><Link to={`/transactions/${index}`}>{transaction.item_name}</Link> </td>
+
+            //     <td className='transactionAmount'><Link to={`/transactions/${index}`}> {transaction.amount} </Link></td>
+
+            //     <td className='transactionFrom'><Link to={`/transactions/${index}`}> {transaction.from} </Link></td>
+
+            //     <td className='transactionCategory'><Link to={`/transactions/${index}`}> {transaction.category} </Link></td>
+
+            //     <td className='transactionDate'><Link to={`/transactions/${index}`}> {transaction.date} </Link></td>
+
+            // </tr> 
+            // <td className='item1'>{transaction.item_name}</td>
+            // <td className='item2'>{transaction.amount}</td>
+            // <td className='item3'>{transaction.date}</td>
+            // <td className='item4'>{transaction.category}</td>
+            // <td className='item5'>{transaction.from}</td>
+            // <td className='item6'>{transaction.description}</td>
