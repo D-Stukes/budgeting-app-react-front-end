@@ -61,10 +61,10 @@
 
 .transactionsComponent{
   grid-row: 2;
-  /* display: grid; */
+  display: grid;
   background-image: url("./Images/mint-marble.png");
-  /* grid-template-columns: .5fr .5fr .5fr .5fr .5fr .5fr .5fr; */
-  /* grid-template-rows: auto; */
+  grid-template-columns: .5fr .5fr .5fr .5fr .5fr .5fr .5fr;
+  grid-template-rows: auto;
   min-height: 5em;
   min-width: 5em;
   height: 90vh;
@@ -240,7 +240,7 @@ td {
 
 
 /* ****************Index Table Headings ***************** */
-/* .th1 {
+.th1 {
   grid-column-start:1;
   grid-column-end: 2;
   grid-row: 1;
@@ -294,13 +294,13 @@ td {
   font-size: 1em;
   text-align: center;
    background-color: rgba(255, 234, 0, 0.4); 
- }   */
+ }  
 /* tr:nth-child(even) td {
   background: #f8f6ff;
 } */
 
 
-/* .viewItem{
+.viewItem{
   grid-column-start:1;
   grid-column-end: 2;
 }
@@ -330,28 +330,4 @@ td {
 }
 .items{
   margin-left:1em;
-} */
-.tableHdgGrid{
-  display: grid;
-  grid-template-columns: repeat(7, 1fr);
-  /* margin-left: 5vw; */
-  width: 90vw;
-  height:80vh;
-  margin: 0 auto;
 }
-.tableDataGrid{
-  display: grid;
-  grid-template-columns: repeat(7, 1fr);
-  height: 55vh;
-  width: 50vw;
-}
-/* .tableHdgGrid > span{
-  border: 2px solid black;
-  width: 10em;
-  height: 2em;
-  margin-left: 0.5vh;
-}
-
-.tableDataGrid > span{
-  border: 2px solid black;
-} */

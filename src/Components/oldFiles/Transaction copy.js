@@ -5,19 +5,20 @@ const Transaction = ({transaction, index}) => {
     console.log("showOneTransaction index = ", index)
 
     return (
-     <div className='tableDataGrid'>
-   
-            <span className='viewItem'><Link to={`/transactions/${index}`}>View this entry</Link></span>
-            <span className='items item1'> {transaction.item_name}</span>
-            <span className='items item2'> {transaction.amount}</span>
-            <span className='items item3'> {transaction.date}</span>
-            <span className='items item4'> {transaction.category}</span>
-            <span className='items item5'> {transaction.from}</span>
-            <span className='items item6'> {transaction.description}</span>
-
+     <>
+     <br/>
+       {/* <tr className='transactionRowItems'> */}
+            <td className='viewItem'><Link to={`/transactions/${index}`}>View this entry</Link></td>
+            <td className='items item1'> {transaction.item_name}</td>
+            <td className='items item2'> {transaction.amount}</td>
+            <td className='items item3'> {transaction.date}</td>
+            <td className='items item4'> {transaction.category}</td>
+            <td className='items item5'> {transaction.from}</td>
+            <td className='items item6'> {transaction.description}</td>
+      {/* </tr> */}
       
    
-    </div>
+    </>
    
     );
 }; 

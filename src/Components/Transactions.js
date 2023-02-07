@@ -2,7 +2,7 @@ import React from 'react';
 import { useState, useEffect} from 'react';
 import Transaction from "./Transaction";
 import axios from 'axios'
-//import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 //import { v4 as uuid } from 'uuid';
 const API = process.env.REACT_APP_API_URL
 
@@ -18,28 +18,51 @@ const Transactions = () => {
         // let transaction = transactions.index
     return (
       <div className='transactionsComponent'>
-         < >
-       
-        {/* <thead className='tableHdg'> */}
-            <th className='th1'>View this transaction</th>
-            <th className='th2'>Item Name</th>
-            <th className='th3'>Amount</th>
-            <th className='th4'>Date</th>
-            <th className='th5'>Category</th>
-            <th className='th6'>From</th>
-            <th className='th7'>Description</th>
-        {/* </thead> */}
-        
-        <table>
-             <tr>
-             {
-                transactions.map((transaction, index ) =>{ 
-                     return <Transaction key={index} transaction={transaction} index={index}/>
-                })}
-             </tr>
-              </table>
-
-        </>
+               <div className="tableHdgGrid">
+                    {/* <thead className='tableHdg'> */}
+                        <span className='th1'>View this transaction</span>
+                        <span className='th2'>Item Name</span>
+                        <span className='th3'>Amount</span>
+                        <span className='th4'>Date</span>
+                        <span className='th5'>Category</span>
+                        <span className='th6'>From</span>
+                        <span className='th7'>Description</span>
+                    {/* </thead> */}
+                    {
+                        transactions.map((transaction, index) => { 
+                            return(
+                            <>   
+                            <Link key={index} className='viewItem' to={`/transactions/${index}`}>View this entry</Link>
+                            <span className='items item1'> {transaction.item_name}</span>
+                            <span className='items item2'> {transaction.amount}</span>
+                            <span className='items item3'> {transaction.date}</span>
+                            <span className='items item4'> {transaction.category}</span>
+                            <span className='items item5'> {transaction.from}</span>
+                            <span className='items item6'> {transaction.description}</span> 
+                            </> 
+                            )
+                        })}
+                </div> 
+                
+                    <div className="tableDataGrid">
+                        {/* {
+                        transactions.map((transaction, index) => { 
+                            return(
+                            <>   
+                            <Link key={index} className='viewItem' to={`/transactions/${index}`}>View this entry</Link>
+                            <span className='items item1'> {transaction.item_name}</span>
+                            <span className='items item2'> {transaction.amount}</span>
+                            <span className='items item3'> {transaction.date}</span>
+                            <span className='items item4'> {transaction.category}</span>
+                            <span className='items item5'> {transaction.from}</span>
+                            <span className='items item6'> {transaction.description}</span> 
+                            </> 
+                            )
+                        })} */}
+                       
+                    </div>
+            
+           
         </div>
     );
 };
