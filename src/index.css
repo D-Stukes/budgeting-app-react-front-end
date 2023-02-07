@@ -62,7 +62,7 @@
 .transactionsComponent{
   grid-row: 2;
   /* display: grid; */
-  background-image: url("./Images/mint-marble.png");
+  /* background-image: url("./Images/mint-marble.png"); */
   /* grid-template-columns: .5fr .5fr .5fr .5fr .5fr .5fr .5fr; */
   /* grid-template-rows: auto; */
   min-height: 5em;
@@ -86,17 +86,23 @@
 .homePage{
   height: 90vh;
   width: 100vw;
-  background-image: url("./Images/mint-marble.png");
-  background-color: rgb(10, 49, 10)
+  background-image: url("./Images/mountains-g7c6069c46_640.jpg");
+  background-color: rgb(10, 49, 10);
+  background-size: cover;
 }
 
-.newPage, .editPage{
+.newPage, .editPage, .showPage{
   height: 90vh;
   width: 100vw;
   background-image: url("./Images/cashinbox.png");
   background-color: rgb(10, 49, 10);
   display:grid;
   grid-template-columns: 1fr 2fr 1fr;
+}
+
+.showPage{
+  background-image: url("./Images/lake-g1ace96185_640.jpg"); 
+  background-size: cover;
 }
 
 .newTransactionFormHdg{
@@ -158,9 +164,26 @@ input[type="submit" i]:hover{
  background-color: rgb(240, 189, 147);
 }
 
-.transactionIndexPage{
-  display: grid;
-  grid-template-rows: 1fr 5fr;
+.transactionDetails{
+  grid-column: 2;
+  margin: 0 auto;
+  /* background-color: rgba(149, 210, 249, .3); */
+  background-color: rgba(4, 41, 9, 0.763);
+  width: 28vw;
+  text-align: center;
+  font-size: 1.1em;
+  color: goldenrod;
+  border-left: 2px solid gold;
+  border-right: 2px solid gold;
+}
+
+
+
+.transactionsIndexPage{
+  /* display: grid;
+  grid-template-rows: 1fr 5fr; */
+  background-image: url("./Images/rivers-g9c3eb030d_640.jpg");
+  background-size: cover;
 }
 .tableHdg{
   grid-row: 1;
@@ -218,16 +241,6 @@ td {
   width: 50vw;
 }
 
-
-
-
- .transactionsListHdg{
-  grid-column-start: 1;
-  grid-column-end: 7;
-  background-image: url("./Images/lightgreyTan-marble.png");
-  height: 5vh;
-  width: 50vw;
-}
 
  /* .item-list { 
   grid-column-start:1;
@@ -335,9 +348,16 @@ td {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
   /* margin-left: 5vw; */
-  width: 90vw;
-  height:80vh;
+  width: 60vw;
+  height:60vh;
   margin: 0 auto;
+  font-weight: bold;
+  font-size: 1.1em;
+  background-color: rgba(248, 213, 161, 0.4);
+  border-left: 1.2em solid rgba(7, 53, 24, 0.92);
+  border-right: 1.2em solid rgba(7, 53, 24, 0.92);
+  border-bottom: 1.1em solid rgba(11, 44, 11,.6);
+  border-top: 1.1em solid rgba(11, 44, 11,.6);
 }
 .tableDataGrid{
   display: grid;
