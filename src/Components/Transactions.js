@@ -39,7 +39,7 @@ function CalculateTotal(){
 
     return (
       <div className='transactionsComponent'>
-        <h1>Total: {total}</h1>
+        <h1 className='acctTotal'>Total: {total}</h1>
                <div className="tableHdgGrid">
                     {/* <thead className='tableHdg'> */}
                         <span className='th1'>View this transaction</span>

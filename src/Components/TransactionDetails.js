@@ -37,7 +37,7 @@ function TransactionDetails() {
        <h3>Transaction Date: {transaction.date}</h3>
        <h3>Description:{transaction.description}</h3>
       <div className="transactionButtons">
-        <Link to={`/transactions`}> <button className="BackButton"> Return to Transactions list</button> </Link>
+        <Link to={`/transactions`}> <button className="backButton"> Return to Transactions list</button> </Link>
         <Link to={`/transactions/${index}/edit`}><button className="editButton">Edit</button> </Link>
         <button onClick={handleDelete} className="deleteButton">Delete</button>
       </div>

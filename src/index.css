@@ -7,7 +7,9 @@
   display: grid;
   grid-template-rows: .5fr 4fr;
 }
-
+.main{
+  background-color: darkslategray;
+}
 .navbar{
   grid-row-start: 1;
   grid-row-end: 2;
@@ -64,12 +66,12 @@
   /* display: grid; */
   /* background-image: url("./Images/mint-marble.png"); */
   /* grid-template-columns: .5fr .5fr .5fr .5fr .5fr .5fr .5fr; */
-  /* grid-template-rows: auto; */
-  min-height: 5em;
-  min-width: 5em;
-  height: 90vh;
+  grid-template-rows: auto;
+  min-height: 5vh;
+  min-width: 6vw;
+  height: 100vh;
   width: 100vw;
-  padding-left: .5em;
+  padding-left: .5vw;
 }
 
 .transactionsBox{
@@ -105,6 +107,8 @@
   background-size: cover;
 }
 
+/* ************ New Transaction Form ************* */
+
 .newTransactionFormHdg{
   font-size: 2.5em;
   text-align: center;
@@ -120,64 +124,95 @@
   grid-column-end: 3;
   background-image: url("./Images/mint-marble.png");
   font-weight: bold;
+  height: 71vh;
+  border: 4px solid darkgreen;
 }
 
 label {
-margin-left: 10em;
-padding-right: 2em;
+margin-left: 10.7vw;
+padding-right: 2vw;
 }
 input[type="text" i], input[type="number" i], input[type="date" i] {
-  width: 21.5em;
+  width: 20.6vw;
 }
 
 input#amount{
-  margin-left: 1.5em;
+  margin-left: 1.5vw;
 }
 input#from{
-  margin-left: 2.8em;
+  margin-left: 2.8vw;
 }
 input#date{
-  margin-left: 3.28em;
+  margin-left: 3.28vw;
 }
 input#category{
-  margin-left: .9em;
+  margin-left: .9vw;
 }
 input#description{
-  margin-left: -.39em;
+  margin-left: -.39vw;
 }
 
 input[type="submit" i]{
-  margin-left: 20.5em;
-  width: 11em;
+  /* margin-left: 20.4em; */
+  margin-left: 18.6vw;
+  width: 10.6vw;
   font-weight: bold;
 }
-input[type="submit" i]:hover{
-  margin-left: 20.5em;
-  width: 11em;
+input[type="submit" i]:hover, .cancelEditButton:hover{
   background-color: rgb(8, 47, 7);
   color:gold;
 }
 
+/* ******* New Transaction Form Edit Button */
+.cancelEditButton{
+  width: 10.6vw;
+  margin-left: .5vw;
+  font-weight: bold;
+}
+.acctTotal{
+  color:goldenrod;
+}
+
+/* ****** Edit Form Buttons ***** */
+.backButton, .editButton, .deleteButton{
+  background-color: mintcream;
+  color: darkgreen;
+  height: 2.3vh;
+}
+
+.backButton:hover, .editButton:hover, .deleteButton:hover{
+  background-color: aquamarine;
+}
+
+
+
+/* **************** Error Page **************** */
 .errorPage {
   height: 150vh;
   width: 100vw;
  background-color: rgb(240, 189, 147);
 }
 
+
+
+/* ************ Transaction Details ************* */
+
 .transactionDetails{
   grid-column: 2;
   margin: 0 auto;
   /* background-color: rgba(149, 210, 249, .3); */
   background-color: rgba(4, 41, 9, 0.763);
-  width: 28vw;
+  width: 39vw;
   text-align: center;
   font-size: 1.1em;
   color: goldenrod;
   border-left: 2px solid gold;
   border-right: 2px solid gold;
+  height: 57vh;
+  border-bottom: 2px solid darkgreen;
 }
 
-
+/* *********** Transactions Index ************* */
 
 .transactionsIndexPage{
   /* display: grid;
@@ -354,10 +389,10 @@ td {
   font-weight: bold;
   font-size: 1.1em;
   background-color: rgba(248, 213, 161, 0.4);
-  border-left: 1.2em solid rgba(7, 53, 24, 0.92);
-  border-right: 1.2em solid rgba(7, 53, 24, 0.92);
-  border-bottom: 1.1em solid rgba(11, 44, 11,.6);
-  border-top: 1.1em solid rgba(11, 44, 11,.6);
+  border-left: 1.2vw solid rgba(7, 53, 24, 0.92);
+  border-right: 1.2vw solid rgba(7, 53, 24, 0.92);
+  border-bottom: 1.1vw solid rgba(11, 44, 11,.6);
+  border-top: 1.1vw solid rgba(11, 44, 11,.6);
 }
 .tableDataGrid{
   display: grid;

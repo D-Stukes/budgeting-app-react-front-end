@@ -119,7 +119,7 @@ const EditTransactionForm = () => {
                 <input type="submit" value=" Save"/>
 
             
-            <Link to={`/transactions`} className='cancelLink'><button className='cancelEditButton'>Cancel</button>
+            <Link to={`/transactions`} className='cancelLink'><button className='cancelSaveButton'>Cancel</button>
                 </Link>
         </form>
         </>

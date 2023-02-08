@@ -1,7 +1,8 @@
 import React from 'react';
 import { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, Link } from 'react-router-dom'
 import axios from 'axios'
+
 const API = process.env.REACT_APP_API_URL
 
 const NewTransactionForm = () => {
@@ -102,8 +103,8 @@ const NewTransactionForm = () => {
                 />
 
                 <br/><br/>
-                <input type="submit" value="  Save"/>
-                <br/>
+                <input type="submit" value="  Save"/><Link to={`/transactions`} className='cancelLink'><button className='cancelEditButton'>Cancel</button>
+                </Link>
                                 {/* <label htmlFor="transactionId">Transaction ID:</label>
                 <input
                 id="transactionId"
