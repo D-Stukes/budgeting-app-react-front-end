@@ -10,14 +10,36 @@ const API = process.env.REACT_APP_API_URL
 const Transactions = () => {
 
     const [transactions, setTransactions] = useState([]) 
+    const [ total, setTotal] = useState(0)
+
     useEffect(() => {
         axios.get(`${API}/transactions`)
-        .then((res) => setTransactions(res.data))
+        .then((res) => {
+            let sum = 0
+            res.data.forEach((data) =>{
+                if(data.is_expense){
+                    sum -= data.amount
+                } else {
+                    sum += data.amount
+                }
+            })
+            console.log("sum= ", sum)
+            setTotal(sum)
+            
+            
+            setTransactions(res.data)})
         }, [])
         // let { index } = useParams();
         // let transaction = transactions.index
+
+function CalculateTotal(){
+   
+}
+
+
     return (
       <div className='transactionsComponent'>
+        <h1>Total: {total}</h1>
                <div className="tableHdgGrid">
                     {/* <thead className='tableHdg'> */}
                         <span className='th1'>View this transaction</span>
