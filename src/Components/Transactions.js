@@ -42,7 +42,7 @@ const Transactions = ({total, setTotal}) => {
         {/* <h1 className='acctTotal'>Account Total: {total}</h1> */}
                <div className="tableHdgGrid">
                     {/* <thead className='tableHdg'> */}
-                        <span className='th th1'>View</span>
+                        <span className='th th1'>View/Edit</span>
                         <span className='th th2'>Item Name</span>
                         <span className='th th3'>Amount</span>
                         <span className='th th4'>Date</span>
@@ -54,7 +54,7 @@ const Transactions = ({total, setTotal}) => {
                         transactions.map((transaction, index) => { 
                             return(
                             <>   
-                            <Link key={index} className='viewItem' to={`/transactions/${index}`}>View this entry</Link>
+                            <Link key={index} className='viewItem' to={`/transactions/${index}`}>View/edit this entry</Link>
                             <span className='items item1'> {transaction.item_name}</span>
                             <span className='items item2'> ${transaction.amount}</span>
                             <span className='items item3'> {transaction.date}</span>
