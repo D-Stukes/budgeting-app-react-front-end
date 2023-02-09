@@ -1,6 +1,6 @@
 import React from 'react';
 import { useState, useEffect} from 'react';
-import Transaction from './Transaction';
+//import Transaction from './Transaction';
 import axios from 'axios'
 import { Link } from "react-router-dom";
 //import Navbar from './Navbar';
@@ -8,10 +8,10 @@ import { Link } from "react-router-dom";
 const API = process.env.REACT_APP_API_URL
 
 
-const Transactions = () => {
+const Transactions = ({total, setTotal}) => {
 
     const [transactions, setTransactions] = useState([]) 
-    const [ total, setTotal] = useState(0)
+    // const [ total, setTotal] = useState(0)
 
     useEffect(() => {
         axios.get(`${API}/transactions`)
@@ -28,7 +28,7 @@ const Transactions = () => {
             setTotal(sum)
             
             setTransactions(res.data)})
-        }, [])
+        }, [ ])
         // let { index } = useParams();
         // let transaction = transactions.index
 
@@ -39,16 +39,16 @@ const Transactions = () => {
 
     return (
       <div className='transactionsComponent'>
-        <h1 className='acctTotal'>Account Total: {total}</h1>
+        {/* <h1 className='acctTotal'>Account Total: {total}</h1> */}
                <div className="tableHdgGrid">
                     {/* <thead className='tableHdg'> */}
-                        <span className='th1'>View this transaction</span>
-                        <span className='th2'>Item Name</span>
-                        <span className='th3'>Amount</span>
-                        <span className='th4'>Date</span>
-                        <span className='th5'>Category</span>
-                        <span className='th6'>From</span>
-                        <span className='th7'>Description</span>
+                        <span className='th th1'>View</span>
+                        <span className='th th2'>Item Name</span>
+                        <span className='th th3'>Amount</span>
+                        <span className='th th4'>Date</span>
+                        <span className='th th5'>Category</span>
+                        <span className='th th6'>From</span>
+                        {/* <span className='th th7'>Description</span> */}
                     {/* </thead> */}
                     {
                         transactions.map((transaction, index) => { 
@@ -56,11 +56,11 @@ const Transactions = () => {
                             <>   
                             <Link key={index} className='viewItem' to={`/transactions/${index}`}>View this entry</Link>
                             <span className='items item1'> {transaction.item_name}</span>
-                            <span className='items item2'> {transaction.amount}</span>
+                            <span className='items item2'> ${transaction.amount}</span>
                             <span className='items item3'> {transaction.date}</span>
                             <span className='items item4'> {transaction.category}</span>
                             <span className='items item5'> {transaction.from}</span>
-                            <span className='items item6'> {transaction.description}</span> 
+                            {/* <span className='items item6'> {transaction.description}</span>  */}
                             </> 
                             )
                         })}

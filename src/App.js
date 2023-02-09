@@ -1,5 +1,7 @@
 // DEPENDENCIES
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { useState} from 'react';
+
 
 // PAGES
 import Home from "./Pages/Home";
@@ -12,15 +14,21 @@ import Error from "./Pages/Error";
 // COMPONENTS
 import Navbar from "./Components/Navbar";
 
+
 function App() {
+
+
+  const [ total, setTotal] = useState(0)
+
+
   return (
     <div className="App">
        <Router>
-          <Navbar/>
+          <Navbar  total= {total}/>
           <main className="main">
             <Routes>
                 <Route path="/" element={<Home />} />
-                <Route path="/transactions" element={<TransactionsIndex />} />
+                <Route path="/transactions" element={<TransactionsIndex  total= {total} setTotal={setTotal}/>} />
                 <Route path="/transactions/new" element={<New />} />
                 <Route path="/transactions/:index" element={<Show />} />
                 <Route path="/transactions/:index/edit" element={<Edit />} />
@@ -28,6 +36,8 @@ function App() {
             </Routes>
           </main>
       </Router>
+
+       
     </div>
   );
 }

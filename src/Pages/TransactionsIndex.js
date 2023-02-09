@@ -1,10 +1,10 @@
 import React from 'react';
 import Transactions from '../Components/Transactions';
 
-const TransactionsIndex = () => {
+const TransactionsIndex = ({total, setTotal}) => {
     return (
         <div className="transactionsIndexPage">
-            <Transactions />
+            <Transactions total={total} setTotal={setTotal} />
         </div>
     );
 };
