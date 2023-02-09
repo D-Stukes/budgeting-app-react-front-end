@@ -1,14 +1,16 @@
 import React from 'react';
 import { Link } from "react-router-dom"
-//import '../navbar.css';
 
 const Navbar = () => {
+
+// let accountTotal = {total}
+
     return (
         <div>
             <nav className ="navbar">
                 
                 <Link to="/" className="navBarHdg" > 
-                    Star Central Budgeting App
+                <span className='starIcon' >⭐️</span> Star Central Budgeting App
                 </Link>
             
                 <button 
@@ -17,6 +19,7 @@ const Navbar = () => {
                         </Link>
                     </button>
                 
+                {/* <button><h1 className='acctTotal'>Total: {accountTotal}</h1></button> */}
                 <button 
                     className='newTransactionButton'> 
                     <Link 

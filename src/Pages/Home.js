@@ -4,7 +4,11 @@ const Home = () => {
     return (
         <>
            <div className='homePage'>
-           <p className="welcomeMsg">Welcome To Star Budgeting System, where you can build and manaage a list of your financial transactions with ease!</p>
+                <br/> <br/>
+                <div className='welcomeMsgBkgrd'>
+                    <h1 className="welcomeMsg">Welcome To Star Budgeting System</h1>
+                    <h3 className="welcomeMsg2">Where you can build and manage a list of your financial transactions with ease!</h3> 
+                </div>
             </div>
         </>
     );

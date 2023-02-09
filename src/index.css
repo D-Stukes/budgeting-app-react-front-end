@@ -32,6 +32,12 @@
   text-decoration: none;
 }
 
+.starIcon{
+font-size: .5em;
+/* top:-5vh;  */
+}
+
+/* ******** NavBar Buttons ********* */
 .transactionsListButton{
   background-color: goldenrod;
   font-size: 1.5em ;
@@ -52,20 +58,8 @@
   width: 9.5em;
 }
 
-
-/* .appDataArea{
-  display: grid;
-  grid-row: 2;
-  background-color: rgb(11, 72, 11);
-  grid-template-columns: 1fr 1fr 1fr;
-} */
-
-
 .transactionsComponent{
   grid-row: 2;
-  /* display: grid; */
-  /* background-image: url("./Images/mint-marble.png"); */
-  /* grid-template-columns: .5fr .5fr .5fr .5fr .5fr .5fr .5fr; */
   grid-template-rows: auto;
   min-height: 5vh;
   min-width: 6vw;
@@ -84,7 +78,39 @@
   background-size: 50%;
 } 
 
- 
+ /* ************* General Setup of Pages ************** */
+
+.welcomeMsgBkgrd{
+  background-color: rgba(246, 246, 233, 0.331);
+  height: 30vh;
+  width: 59vw;
+  margin-left: 21vw;
+  border: 2px solid gray;
+  padding-top: 4vh;
+}
+
+.welcomeMsg{
+  font-size: 3em;
+  text-align:center ;
+  /* font-family: 'Meie Script', cursive; */
+  /* font-family: 'Barlow', sans-serif;  */
+  font-family: 'Imperial Script', cursive; 
+  color:rgb(136, 22, 244);
+  width:98%;
+  /* background-color: rgba(246, 246, 233, 0.331); */
+  /* background-color: rgba(242, 240, 135, 0.2); */
+}
+.welcomeMsg2{
+  font-size: 2em;
+  text-align:center ;
+  font-family: 'Meie Script', cursive;
+  /* font-family: 'Barlow', sans-serif; 
+  font-family: 'Imperial Script', cursive;  */
+  color:navy;
+  width:95%;
+  /* background-color: rgba(242, 240, 135, 0.2); */
+}
+
 .homePage{
   height: 90vh;
   width: 100vw;
@@ -107,9 +133,16 @@
   background-size: cover;
 }
 
+/* ******** Account Total ******* */
+.acctTotal{
+  color:goldenrod;
+}
+
+
+
 /* ************ New Transaction Form ************* */
 
-.newTransactionFormHdg{
+.newTransactionFormHdg, .editTransactionFormHdg{
   font-size: 2.5em;
   text-align: center;
   font-weight: bolder;
@@ -129,7 +162,7 @@
 }
 
 label {
-margin-left: 10.7vw;
+margin-left: 9.8vw;
 padding-right: 2vw;
 }
 input[type="text" i], input[type="number" i], input[type="date" i] {
@@ -154,30 +187,27 @@ input#description{
 
 input[type="submit" i]{
   /* margin-left: 20.4em; */
-  margin-left: 18.6vw;
+  margin-left: 17.6vw;
   width: 10.6vw;
   font-weight: bold;
 }
-input[type="submit" i]:hover, .cancelEditButton:hover{
+input[type="submit" i]:hover, .cancelEditButton:hover, .cancelSaveButton:hover{
   background-color: rgb(8, 47, 7);
   color:gold;
 }
 
-/* ******* New Transaction Form Edit Button */
-.cancelEditButton{
-  width: 10.6vw;
+/* ******* New Transaction Form Buttons */
+.cancelEditButton, .cancelSaveButton{
+  width: 10.2vw;
   margin-left: .5vw;
   font-weight: bold;
-}
-.acctTotal{
-  color:goldenrod;
 }
 
 /* ****** Edit Form Buttons ***** */
 .backButton, .editButton, .deleteButton{
   background-color: mintcream;
   color: darkgreen;
-  height: 2.3vh;
+  height: 5vh;
 }
 
 .backButton:hover, .editButton:hover, .deleteButton:hover{
@@ -185,17 +215,28 @@ input[type="submit" i]:hover, .cancelEditButton:hover{
 }
 
 
+/* ************ Transaction Details ************* */
 
-/* **************** Error Page **************** */
-.errorPage {
-  height: 150vh;
-  width: 100vw;
- background-color: rgb(240, 189, 147);
+ .transactionDetailsHdg{
+  font-size: 2.5em;
+  text-align: center;
+  font-weight: bolder;
+  font-family: 'Meie Script', cursive;
+  font-family: 'Barlow', sans-serif; 
+  font-family: 'Imperial Script', cursive; 
+  color: rgb(197, 197, 26);
 }
 
+.itemDetailHdg{
+  color:goldenrod;
+  margin-right: .2em;
+  font-size: 1.25em;
+}
+.itemDetail{
+  color:wheat;
+  font-size: 1.25em;
+}
 
-
-/* ************ Transaction Details ************* */
 
 .transactionDetails{
   grid-column: 2;
@@ -208,8 +249,16 @@ input[type="submit" i]:hover, .cancelEditButton:hover{
   color: goldenrod;
   border-left: 2px solid gold;
   border-right: 2px solid gold;
-  height: 57vh;
+  height: 67vh;
   border-bottom: 2px solid darkgreen;
+}
+
+
+/* **************** Error Page **************** */
+.errorPage {
+  height: 150vh;
+  width: 100vw;
+ background-color: rgb(240, 189, 147);
 }
 
 /* *********** Transactions Index ************* */
@@ -247,16 +296,6 @@ td {
   white-space: nowrap;
 }
 
- /* th {
-  position: sticky;
-  top: 0; 
-  background: #f2d07a; 
-  text-align: left;
-  font-weight: normal;
-  font-size: 1.1rem;
-  color: rgb(9, 0, 0); 
-  margin-left: -10em;
- }  */
 
 th:last-child {
   border: 0;
@@ -276,18 +315,49 @@ td {
   width: 50vw;
 }
 
-
- /* .item-list { 
-  grid-column-start:1;
-  grid-column-end: 2;
-  font-weight: bold;
-  font-size: 1em;
-  text-align: center;
-  background-color: rgba(255, 234, 0, 0.4);
-}  */
-
-
 /* ****************Index Table Headings ***************** */
+
+.tableHdgGrid{
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  /* margin-left: 5vw; */
+  width: 60vw;
+  height:60vh;
+  margin: 0 auto;
+  font-weight: bold;
+  font-size: 1.1em;
+  background-color: rgba(248, 213, 161, 0.4);
+  border-left: 1.2vw solid rgba(7, 53, 24, 0.92);
+  border-right: 1.2vw solid rgba(7, 53, 24, 0.92);
+  border-bottom: 1.1vw solid rgba(11, 44, 11,.6);
+  border-top: 1.1vw solid rgba(11, 44, 11,.6);
+}
+.tableDataGrid{
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  height: 55vh;
+  width: 50vw;
+}
+
+/* ************** End of Active Settings ************** */
+
+
+
+
+
+/* ******* Old Index Table Settings ******** */
+
+/* .tableHdgGrid > span{
+  border: 2px solid black;
+  width: 10em;
+  height: 2em;
+  margin-left: 0.5vh;
+}
+
+.tableDataGrid > span{
+  border: 2px solid black;
+} */
+
 /* .th1 {
   grid-column-start:1;
   grid-column-end: 2;
@@ -378,35 +448,4 @@ td {
 }
 .items{
   margin-left:1em;
-} */
-.tableHdgGrid{
-  display: grid;
-  grid-template-columns: repeat(7, 1fr);
-  /* margin-left: 5vw; */
-  width: 60vw;
-  height:60vh;
-  margin: 0 auto;
-  font-weight: bold;
-  font-size: 1.1em;
-  background-color: rgba(248, 213, 161, 0.4);
-  border-left: 1.2vw solid rgba(7, 53, 24, 0.92);
-  border-right: 1.2vw solid rgba(7, 53, 24, 0.92);
-  border-bottom: 1.1vw solid rgba(11, 44, 11,.6);
-  border-top: 1.1vw solid rgba(11, 44, 11,.6);
-}
-.tableDataGrid{
-  display: grid;
-  grid-template-columns: repeat(7, 1fr);
-  height: 55vh;
-  width: 50vw;
-}
-/* .tableHdgGrid > span{
-  border: 2px solid black;
-  width: 10em;
-  height: 2em;
-  margin-left: 0.5vh;
-}
-
-.tableDataGrid > span{
-  border: 2px solid black;
 } */

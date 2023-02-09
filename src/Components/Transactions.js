@@ -1,8 +1,9 @@
 import React from 'react';
 import { useState, useEffect} from 'react';
-import Transaction from "./Transaction";
+import Transaction from './Transaction';
 import axios from 'axios'
 import { Link } from "react-router-dom";
+//import Navbar from './Navbar';
 //import { v4 as uuid } from 'uuid';
 const API = process.env.REACT_APP_API_URL
 
@@ -26,20 +27,19 @@ const Transactions = () => {
             console.log("sum= ", sum)
             setTotal(sum)
             
-            
             setTransactions(res.data)})
         }, [])
         // let { index } = useParams();
         // let transaction = transactions.index
 
-function CalculateTotal(){
+// function CalculateTotal(){
    
-}
+// }
 
 
     return (
       <div className='transactionsComponent'>
-        <h1 className='acctTotal'>Total: {total}</h1>
+        <h1 className='acctTotal'>Account Total: {total}</h1>
                <div className="tableHdgGrid">
                     {/* <thead className='tableHdg'> */}
                         <span className='th1'>View this transaction</span>
@@ -83,7 +83,8 @@ function CalculateTotal(){
                         })} */}
                        
                     </div>
-            
+                    
+                    {/* <Navbar  total={total}/> */}
            
         </div>
     );
@@ -101,7 +102,6 @@ export default Transactions;
 //               return <ShowOneTransaction key={index} transaction={transaction}   />;
 //             })} 
 
-{/* <Link to={`/transactions/${index}`}> <td className='item6'>{transaction.description}</td></Link> */}
 
 // <Link to={`/transactions/${index}`}> <td className='item1'>{transaction.item_name}</td></Link>
 // <Link to={`/transactions/${index}`}>  <td className='item2'>{transaction.amount}</td></Link>

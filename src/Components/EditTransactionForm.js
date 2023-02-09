@@ -19,6 +19,15 @@ const EditTransactionForm = () => {
     const handleTextChange = (event) => {
         setTransaction({...transaction, [event.target.id]: event.target.value})
     }
+
+    const[checked, setChecked] = useState(false)
+
+    const handleCheckBox = ()=>{
+        setChecked(!checked)  //updates checkbox state
+        transaction.is_expense=!checked 
+    }
+
+
     useEffect(() => {
         axios
         .get(`${API}/transactions/${index}`)
@@ -48,7 +57,7 @@ const EditTransactionForm = () => {
     return (
         <>
             <form onSubmit={handleSubmit} className = "editTransactionForm">
-
+            <h1 className="editTransactionFormHdg">Edit This Transaction</h1>
                 <label htmlFor="item_name">Item Name:</label>
                 <input
                 id='item_name'
@@ -58,7 +67,7 @@ const EditTransactionForm = () => {
                 placeholder="Enter item name"
                 required
                 />
-                <br/>
+                <br/><br/> 
 
                 <label htmlFor="amount">Amount:</label>
                 <input
@@ -105,6 +114,7 @@ const EditTransactionForm = () => {
                 placeholder="Enter a category"
                 required
                 />
+
                 <br/> <br/>
                 <label htmlFor="description">Description:</label>
                 <input
@@ -115,7 +125,15 @@ const EditTransactionForm = () => {
                 onChange={handleTextChange}
                 placeholder="Enter a description/note"
                 />
-                <br/> <br/>
+                <br/> <br/> <br/>
+                <label htmlFor="is_expense">Is This An Expense?</label>
+                <input
+                id='is_expense'
+                type="checkbox"
+                onChange={handleCheckBox}
+                />
+                <br/> <br/> <br/>
+
                 <input type="submit" value=" Save"/>
 
             

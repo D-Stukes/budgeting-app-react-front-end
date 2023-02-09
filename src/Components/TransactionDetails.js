@@ -29,13 +29,24 @@ function TransactionDetails() {
   //display this info in the browser
   return (
     // transaction.item_name &&
-    <article className='transactionDetails'>  
-       <h3>{transaction.item_name}</h3>
-       <h3>{transaction.amount}</h3>
-       <h3>Category:{transaction.category}</h3>
-       <h3>Transaction Source: {transaction.from}</h3>
-       <h3>Transaction Date: {transaction.date}</h3>
-       <h3>Description:{transaction.description}</h3>
+    <article className='transactionDetails'> 
+       <br/><br/>
+       <h1 className="transactionDetailsHdg">Transaction Details</h1>
+       <span className="itemDetailHdg">{transaction.item_name}:</span>
+       <span className="itemDetail">${transaction.amount}</span>
+       <br/><br/>
+       <span className="itemDetailHdg">Category:</span> 
+       <span className="itemDetail">{transaction.category}</span>
+       <br/><br/>
+       <span className="itemDetailHdg">Transaction Source: </span>
+       <span className="itemDetail">{transaction.from}</span>
+       <br/><br/>
+       <span className="itemDetailHdg">Transaction Date: </span>
+       <span className="itemDetail">{transaction.date}</span>
+       <br/><br/>
+       <span className="itemDetailHdg">Description:</span>
+       <span className="itemDetail"> {transaction.description}</span>
+       <br/><br/>
       <div className="transactionButtons">
         <Link to={`/transactions`}> <button className="backButton"> Return to Transactions list</button> </Link>
         <Link to={`/transactions/${index}/edit`}><button className="editButton">Edit</button> </Link>

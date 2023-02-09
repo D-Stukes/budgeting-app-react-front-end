@@ -14,6 +14,7 @@ const NewTransactionForm = () => {
         from: "",
         category: "",
         description: "",
+        is_expense: "",
     })
 
 
@@ -31,6 +32,12 @@ const NewTransactionForm = () => {
             .catch(err => console.log(err))
     }
 
+    const[checked, setChecked] = useState(false)
+
+    const handleCheckBox = ()=>{
+        setChecked(!checked)  //updates checkbox state
+        transaction.is_expense=!checked 
+    }
 
     return (
 <>
@@ -47,7 +54,7 @@ const NewTransactionForm = () => {
                 placeholder="Enter item name"
                 required
                 />
-                <br/>
+                <br/><br/>
 
                 <label htmlFor="amount">Amount:</label>
                 <input
@@ -80,7 +87,7 @@ const NewTransactionForm = () => {
                 placeholder="Enter the source business or company. (e.g. bank, supermarket"
                 required
                 />
-                <br/>
+                <br/><br/>
                 <label htmlFor="category">Category:</label>
                 <input
                 id='category'
@@ -100,6 +107,14 @@ const NewTransactionForm = () => {
                 onChange={handleTextChange}
                 placeholder="Enter a description"
                 required
+                />
+
+                <br/><br/>
+                <label htmlFor="is_expense">Is This An Expense?</label>
+                <input
+                id='is_expense'
+                type="checkbox"
+                onChange={handleCheckBox}
                 />
 
                 <br/><br/>
