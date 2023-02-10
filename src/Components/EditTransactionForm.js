@@ -57,9 +57,11 @@ const EditTransactionForm = () => {
     return (
         <>
             <form onSubmit={handleSubmit} className = "editTransactionForm">
+            <div className="editTransactionFormBkgrd">
             <h1 className="editTransactionFormHdg">Edit This Transaction</h1>
-                <label htmlFor="item_name">Item Name:</label>
+                <label className='editLabel' htmlFor="item_name">Item Name:</label>
                 <input
+                className='editInput'
                 id='item_name'
                 value={transaction.item_name}
                 type="text"
@@ -69,8 +71,9 @@ const EditTransactionForm = () => {
                 />
                 <br/><br/> 
 
-                <label htmlFor="amount">Amount:</label>
+                <label className='editLabel' htmlFor="amount">Amount:</label>
                 <input
+                className='editInput'
                 id="amount"
                 value={transaction.amount}
                 type="number"
@@ -80,21 +83,23 @@ const EditTransactionForm = () => {
                 />
                 <br/><br/>
 
-                <label htmlFor="date">Date:</label>
+                <label className='editLabel'  htmlFor="date">Date:</label>
                 <input
+                className='editInput'
                 id="date"
                 name="date"
                 value={transaction.date}
                 type="date"
-                
                 placeholder="Please select a date"
                 onChange={handleTextChange}
                 required
                 />
                 <br/><br/>
 
-                <label htmlFor="from">From:</label>
+                <label className='editLabel' htmlFor="from">From:</label>
+                
                 <input
+                className='editInput'
                 id='from'
                 value={transaction.from}
                 name="from"
@@ -104,8 +109,9 @@ const EditTransactionForm = () => {
                 required
                 />
                 <br/><br/>
-                <label htmlFor="category">Category:</label>
+                <label className='editLabel' htmlFor="category">Category:</label>
                 <input
+                className='editInput'
                 id='category'
                 name="category"
                 value={transaction.category}
@@ -116,8 +122,9 @@ const EditTransactionForm = () => {
                 />
 
                 <br/> <br/>
-                <label htmlFor="description">Description:</label>
+                <label className='editLabel' htmlFor="description">Description:</label>
                 <input
+                className='editInput'
                 id='description'
                 name="description"
                 value={transaction.description}
@@ -126,8 +133,9 @@ const EditTransactionForm = () => {
                 placeholder="Enter a description/note"
                 />
                 <br/> <br/> <br/>
-                <label htmlFor="is_expense">Is This An Expense?</label>
+                <label className='editLabel'  htmlFor="is_expense">Is This An Expense?</label>
                 <input
+                className='editInput'
                 id='is_expense'
                 type="checkbox"
                 onChange={handleCheckBox}
@@ -139,6 +147,7 @@ const EditTransactionForm = () => {
             
             <Link to={`/transactions`} className='cancelLink'><button className='cancelSaveButton'>Cancel</button>
                 </Link>
+            </div>
         </form>
         </>
     ); 

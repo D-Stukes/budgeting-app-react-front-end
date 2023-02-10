@@ -43,12 +43,13 @@ font-size: .5em;
   color:gold;
   grid-column: 3;
   grid-row: 2;
-  margin-left: 14.5vw;
+  margin-left: 12vw;
   font-weight: lighter;
   background-color: #51585e93;
-  width: 15vw;
+  width: 21vw;
   font-style: italic;
   border: 1px solid rgba(215, 252, 240, 0.781);
+  text-align: center;
 }
 
 .transactionsLink, .newTransactionLink{
@@ -90,7 +91,7 @@ font-size: .5em;
   min-height: 5vh;
   min-width: 6vw;
   height: 100vh;
-  width: 100vw;
+  width: 99vw;
   padding-left: .5vw;
  
 }
@@ -160,12 +161,9 @@ font-size: .5em;
   background-color: rgb(10, 49, 10);
   display:grid;
   grid-template-columns: 1fr 2fr 1fr;
-}
-
-.showPage{
-  background-image: url("./Images/lake-g1ace96185_640.jpg"); 
   background-size: cover;
 }
+
 
 /* ******** Account Total ******* */
 .acctTotal{
@@ -185,6 +183,10 @@ font-size: .5em;
   color: rgb(8, 45, 34);
 }
 
+
+
+.editTransactionFormHdg{
+  color:rgb(13 69 33)}
 .newTransactionFormBox, .editTransactionForm{
   grid-column-start: 2;
   grid-column-end: 3;
@@ -192,6 +194,37 @@ font-size: .5em;
   font-weight: bold;
   height: 71vh;
   border: 4px solid darkgreen;
+}
+
+.editTransactionFormBkgrd{
+  background-color: rgba(248, 208, 158, 0.585);
+  height: 76vh;
+  margin: auto auto;
+  border: 5px solid rgb(40, 21, 7);
+  width: 35vw;
+  
+}
+.editTransactionForm{
+  grid-column-start: 2;
+  grid-column-end: 3;
+  background-image: url("./Images/christine-roy-ir5MHI6rPg0-unsplash.jpg");
+  /* background-image: url("./Images/822048.jpg");  */
+  font-weight: bold;
+  height: 85vh;
+  border: 4px solid darkgreen;
+  background-size: cover;
+  width: 55vw;
+}
+label.editTransactionForm{
+  margin-left: 2.8vw;
+  padding-right: 2vw;
+  width: 4vw;
+}
+
+input#item-name{
+  margin-left: 2.8vw;
+  padding-right: 2vw;
+  width: 4vw;
 }
 
 label {
@@ -249,7 +282,13 @@ input[type="submit" i]:hover, .cancelEditButton:hover, .cancelSaveButton:hover{
   background-color: aquamarine;
 }
 
+label.editLabel{
+  margin-left: .8vw;
+}
 
+input[type="submit" i]{
+  margin-left: 8.6vw;
+}
 /* ************ Transaction Details ************* */
 
  .transactionDetailsHdg{

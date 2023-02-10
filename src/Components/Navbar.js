@@ -27,7 +27,7 @@ const Navbar = ({total}) => {
                     </Link>
                     </button> 
             {/* <Transactions total = {total} setTotal={setTotal} /> */}
-            <h1 className='acctTotalNav'>Account Total: ${total}</h1>
+            <h1 className='acctTotalNav'>Bank Account Total: ${total}</h1>
             </nav> 
             
         </div>
