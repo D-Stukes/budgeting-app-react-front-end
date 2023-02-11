@@ -1,3 +1,28 @@
+# Github Repo links and Deployment URLs for Budgeting App
+
+
+## Github
+
+### Frontend Github Repository
+#### https://github.com/D-Stukes/budgeting-app-react-front-end
+
+### Backend Github Repository
+#### https://github.com/D-Stukes/Budgeting-App-Express-Backend
+
+
+## Deployments
+
+##  Frontend Deployment (Using Netlifly)
+### https://budgeting-app-express-backend.onrender.com
+
+## Backend Deployment (Using Render.com)
+### https://creative-torrone-0081aa.netlify.app
+
+
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
