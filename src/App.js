@@ -54,7 +54,7 @@ function App() {
                 <Route path="/" element={<Home />} />
                 <Route path="/transactions" element={<TransactionsIndex  total= {total} setTotal={setTotal}/>} />
                 <Route path="/transactions/new" element={<New />} />
-                <Route path="/transactions/:index" element={<Show transaction={transaction} setTransaction={setTransaction} />} />
+                <Route path="/transactions/:index" element={<Show transaction={transaction} setTransaction={setTransaction} total= {total} setTotal={setTotal} />} />
                 <Route path="/transactions/:index/edit" element={<Edit transaction={transaction} setTransaction={setTransaction}/>} />
                 <Route path="/error" element={<Error />} />
             </Routes>

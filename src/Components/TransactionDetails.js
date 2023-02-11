@@ -4,7 +4,7 @@ import axios from 'axios'
 const API = process.env.REACT_APP_API_URL
 
 
-function TransactionDetails({transaction, setTransaction}) {
+function TransactionDetails({transaction, setTransaction, total, setTotal}) {
 
   // const [transaction, setTransaction] = useState([]);  //moved up to App so I can pass it down; this statement sets state to handle changes in transaction entry
   let { index } = useParams();  //utilize useParams to capture id of selected transaction
