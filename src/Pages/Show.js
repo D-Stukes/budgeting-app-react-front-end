@@ -1,10 +1,10 @@
 import React from 'react';
 import TransactionDetails from '../Components/TransactionDetails';
 
-const Show = () => {
+const Show = ({transaction, setTransaction}) => {
     return (
         <div className='showPage'>
-           <TransactionDetails /> 
+           <TransactionDetails transaction={transaction} setTransaction={setTransaction} /> 
         </div>
     );
 };

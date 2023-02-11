@@ -1,10 +1,10 @@
 import React from 'react';
 import EditTransactionForm from '../Components/EditTransactionForm';
 
-const Edit = () => {
+const Edit = ({transaction, setTransaction}) => {
     return (
         <div className='editPage'>
-           <EditTransactionForm /> 
+           <EditTransactionForm transaction={transaction} setTransaction={setTransaction} /> 
         </div>
     );
 };

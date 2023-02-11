@@ -4,45 +4,48 @@ import { useParams, Link, useNavigate } from 'react-router-dom'
 import axios from 'axios'
 const API = process.env.REACT_APP_API_URL
 
-const EditTransactionForm = () => {
+const EditTransactionForm = ({transaction, setTransaction}) => {
     let { index } = useParams();
     const navigate = useNavigate()
-    const [transaction, setTransaction] = useState({
+    const [editTransaction, setEditTransaction] = useState({
         item_name: "",
         amount: "",
         date: "",
         from: "",
         category: "",
         description:"",
+        is_expense: ""
     })
 
     const handleTextChange = (event) => {
-        setTransaction({...transaction, [event.target.id]: event.target.value})
+        setEditTransaction({...editTransaction, [event.target.id]: event.target.value})
     }
 
     const[checked, setChecked] = useState(false)
 
     const handleCheckBox = ()=>{
         setChecked(!checked)  //updates checkbox state
-        transaction.is_expense=!checked 
+        // editTransaction.is_expense=!checked 
+        setEditTransaction({ ...editTransaction, is_expense: !editTransaction.is_expense });
     }
-
 
     useEffect(() => {
         axios
         .get(`${API}/transactions/${index}`)
-        .then((res) => setTransaction(res.data))
+        .then((res) => setEditTransaction(res.data))
         .catch(err => console.log(err))
       }, [index]);
 
       const handleSubmit = (event) => {
         event.preventDefault() 
-        transaction.amount = Number(transaction.amount)   
+        editTransaction.amount = Number(editTransaction.amount)   
         axios
-        .put(`${API}/transactions/${index}`,transaction)
+        .put(`${API}/transactions/${index}`,editTransaction)
         .then((res) => {
+            // setEditTransaction(res.data)  No need to display this data on this page since it is immediately navigating to the index page
             setTransaction(res.data)
             navigate(`/transactions/${index}`)
+            
         })
         .catch(err => console.log(err))
       }
@@ -63,7 +66,7 @@ const EditTransactionForm = () => {
                 <input
                 className='editInput'
                 id='item_name'
-                value={transaction.item_name}
+                value={editTransaction.item_name}
                 type="text"
                 onChange={handleTextChange}
                 placeholder="Enter item name"
@@ -75,7 +78,7 @@ const EditTransactionForm = () => {
                 <input
                 className='editInput'
                 id="amount"
-                value={transaction.amount}
+                value={editTransaction.amount}
                 type="number"
                 onChange={handleTextChange}
                 placeholder="Enter amount"
@@ -88,7 +91,7 @@ const EditTransactionForm = () => {
                 className='editInput'
                 id="date"
                 name="date"
-                value={transaction.date}
+                value={editTransaction.date}
                 type="date"
                 placeholder="Please select a date"
                 onChange={handleTextChange}
@@ -101,7 +104,7 @@ const EditTransactionForm = () => {
                 <input
                 className='editInput'
                 id='from'
-                value={transaction.from}
+                value={editTransaction.from}
                 name="from"
                 type="text"
                 onChange={handleTextChange}
@@ -114,7 +117,7 @@ const EditTransactionForm = () => {
                 className='editInput'
                 id='category'
                 name="category"
-                value={transaction.category}
+                value={editTransaction.category}
                 type="text"
                 onChange={handleTextChange}
                 placeholder="Enter a category"
@@ -127,7 +130,7 @@ const EditTransactionForm = () => {
                 className='editInput'
                 id='description'
                 name="description"
-                value={transaction.description}
+                value={editTransaction.description}
                 type="text"
                 onChange={handleTextChange}
                 placeholder="Enter a description/note"
@@ -139,6 +142,7 @@ const EditTransactionForm = () => {
                 id='is_expense'
                 type="checkbox"
                 onChange={handleCheckBox}
+                checked={editTransaction.is_expense}
                 />
                 <br/> <br/> <br/>
 
